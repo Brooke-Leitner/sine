@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Name of your awesome camera app -->
-    <title>Camera App</title>
+    <title>Sine</title>
     <style>
       html, body{
         margin: 0;
@@ -13,56 +12,52 @@
         height: 100%;
         width: 100%;
       }
-      #camera, #camera--view, #camera--sensor, #camera--output{
-          position: fixed;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
+      body {
+        display: grid;
       }
-      #camera--view, #camera--sensor, #camera--output{
-          transform: scaleX(-1);
-          filter: FlipH;
+      main {
+        width: 350px;
+        place-self: center;
       }
-      #camera--trigger{
-          width: 200px;
-          background-color: black;
-          color: white;
-          font-size: 16px;
-          border-radius: 30px;
-          border: none;
-          padding: 15px 20px;
-          text-align: center;
-          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-          position: fixed;
-          bottom: 30px;
-          left: calc(50% - 100px);
+      #logo {
+        width: 150px;
       }
-      .taken{
-          height: 100px!important;
-          width: 100px!important;
-          transition: all 0.5s ease-in;
-          border: solid 3px white;
-          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-          top: 20px;
-          right: 20px;
-          z-index: 2;
+      p{
+        font-family: sans-serif;
+        line-height: 1.5em;
+      }
+      h1{
+        font-family: sans-serif;
+        font-size: 1.5em;
+        font-weight: lighter;
+        margin-top: 20px;
+      }
+      button {
+        width: 200px;
+        font-size: 16px;
+        border-radius: 30px;
+        border: solid 1px black;
+        padding: 15px 20px;
+        text-align: center;
+        background-color: white;
+        margin-top: 20px;
+      }
+      button:hover {
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
       }
     </style>
 </head>
-    
 <body>
-    <!-- Camera -->
-    <main id="camera">
-        <!-- Camera sensor -->
-        <canvas id="camera--sensor"></canvas>
-        <!-- Camera view -->
-        <video id="camera--view" autoplay playsinline></video>
-        <!-- Camera output -->
-        <img src="//:0" alt="" id="camera--output">
-        <!-- Camera trigger -->
-        <button id="camera--trigger">Take a picture</button>
-    </main>
-    <!-- Reference to your JavaScript file -->
-    <script src="app.js"></script>
+  <main>
+    <img src="sinelogo.png" alt="sine logo" id="logo">
+    <div>
+    <h1>Our idea is simple.</h1>
+    <p>1 minute of time, 4 randomized photos.
+      <br>No control, no filters, no options.
+      <br>Capture moments as they are truly experienced.
+    </p>
+  </div>
+    <button onclick="location.href='app.html'">Let's Begin</button>
+  </main>
 </body>
 </html>
