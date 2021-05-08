@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sine</title>
+    <style>
+      html, body{
+        margin: 0;
+        padding: 0;
+        max-height: -webkit-fill-available;
+        height: 100%;
+        width: 100%;
+      }
+      #camera--output{
+        display: none;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 50% 50%;
+        object-fit: scale-down;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+      }
+      #camera, #camera--view, #camera--sensor{
+          position: fixed;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+      }
+      #camera--view, #camera--sensor, #camera--output{
+          transform: scaleX(-1);
+          filter: FlipH;
+      }
+      #camera--trigger{
+          bottom: 30px;
+          width: 200px;
+          font-size: 16px;
+          border-radius: 30px;
+          border: none;
+          padding: 15px 20px;
+          text-align: center;
+          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+          position: fixed;
+          left: calc(50% - 100px);
+          z-index: 1;
+      }
+      .resetbuttonstyle{
+        background-color: white;
+        color: black;
+      }
+      .buttonstyle{
+        background-color: black;
+        color: white;
+      }
+      .outputs{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      #message{
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        border: none;
+        padding: 15px 20px;
+        text-align: center;
+        z-index: 2;
+        width: 120px;
+        position: fixed;
+        left: calc(50% - 80px);
+        top: calc(50% - 50px);
+        font-family: sans-serif;
+      }
+    </style>
+</head>
+<body>
+    <!-- Camera -->
+    <main id="camera">
+        <!-- Camera sensor -->
+        <canvas id="camera--sensor"></canvas>
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+        <!-- Camera outputs -->
+        <div id="camera--output">
+          <img src="//:0" alt="" id="camera--output-1" class="outputs">
+          <img src="//:0" alt="" id="camera--output-2" class="outputs">
+          <img src="//:0" alt="" id="camera--output-3" class="outputs">
+          <img src="//:0" alt="" id="camera--output-4" class="outputs">
+        </div>
+        <!-- Camera trigger -->
+        <button class="buttonstyle" id="camera--trigger">Start</button>
+        <p id="message">Tap and hold to save a photo!</p>
+    </main>
+    <!-- Reference to JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
